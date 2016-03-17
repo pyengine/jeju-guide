@@ -59,7 +59,7 @@ edit /etc/apache2/conf-available/pyengine.conf
         Require all granted
     </Directory>
 
-    WSGIScriptAlias /opt/${PROJECT}/pyengine/wsgi.py
+    WSGIScriptAlias / /opt/${PROJECT}/pyengine/wsgi.py
     WSGIPassAuthorization On
 
     <Directory /opt/${PROJECT}/pyengine>
