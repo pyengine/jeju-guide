@@ -13,7 +13,7 @@ PROJECT | myproject | Project name
 Pyengine is based on apache and python django framework
 
 ~~~bash
-apt-get install -y python-dev python-pip mariadb-server apache2 libapache2-mod-wsgi python-mysqldb libyaml-cpp-dev
+apt-get install -y python-dev python-pip mariadb-server apache2 libapache2-mod-wsgi python-mysqldb libyaml-cpp-dev libyaml-dev
 ~~~
 
 ## Install PIP libraries for django
