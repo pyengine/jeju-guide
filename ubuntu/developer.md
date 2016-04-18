@@ -4,6 +4,7 @@
 For developer, many useful packages exist.
 
 ~~~bash
+apt-get update
 apt-get -y install vim
 apt-get -y install cscope
 apt-get -y install ctags
