@@ -96,8 +96,11 @@ a2enconf pyengine
 
 Create pyengine database
 
-~~~bash
-mysql -u root -e "create database pyengine character set utf8 collate utf8_general_ci"
+~~~expect
+spawn mysql -u root -e "create database pyengine character set utf8 collate utf8_general_ci"
+expect "Enter password: "
+send "\n";
+interact
 ~~~
 
 ## Update django DB
