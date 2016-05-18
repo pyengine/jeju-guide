@@ -14,7 +14,9 @@ Pyengine is based on apache and python django framework
 
 ~~~bash
 apt-get update
-apt-get install -y git python-dev python-pip mariadb-server apache2 libapache2-mod-wsgi python-mysqldb libyaml-cpp-dev libyaml-dev python-paramiko
+export DEBIAN_FRONTEND=noninteractive
+apt-get -y install mariadb-server python-mysqldb
+apt-get install -y git python-dev python-pip apache2 libapache2-mod-wsgi python-mysqldb libyaml-cpp-dev libyaml-dev python-paramiko
 ~~~
 
 ## Install BPMN library
