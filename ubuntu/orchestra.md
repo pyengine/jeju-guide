@@ -41,6 +41,7 @@ pip install rsa
 pip install pytz
 pip install pyyaml
 pip install boto3
+pip install django-cors-headers
 ~~~
 
 ## Download source
