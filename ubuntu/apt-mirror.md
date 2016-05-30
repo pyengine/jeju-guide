@@ -2,7 +2,7 @@
 
 Keyword     | Value         | Description
 ----        | ----          | ----
-MIRROR_PATH | /var/www/apt-mirror   | local directory for saving mirror source
+MIRROR_PATH | /var/www/html/apt-mirror   | local directory for saving mirror source
 NUM_THREAD  | 10            | the number of threads
 
 ## Install Apt mirror package
