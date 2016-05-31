@@ -12,6 +12,9 @@ DEV	| eth0
 
 # Setup Mesos
 
+apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys E56151BF
+If you have proxy, use above command instead of using keyserver.ubuntu.com
+
 ~~~bash
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv E56151BF
 DISTRO=$(lsb_release -is | tr '[:upper:]' '[:lower:]')
