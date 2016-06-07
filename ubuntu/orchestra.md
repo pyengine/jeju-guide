@@ -50,7 +50,7 @@ Download pyengine source
 
 ~~~bash
 cd /opt/
-git clone https://github.com/pyengine/orchestra.git ${PROJECT}
+git clone https://github.com/bocabaton/orchestra.git ${PROJECT}
 ~~~
 
 ## Update python module path environment
