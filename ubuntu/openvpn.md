@@ -188,9 +188,81 @@ openssl dhparam -out /etc/openvpn/dh2048.pem 2048
 
 Now let's change directories so that we're working directly out of where we moved Easy-RSA's scripts to earlier in Step 2.
 
+We will do without interactive
+
+edit /etc/openvpn/easy-rsa/build-ca
+
+~~~text
+!/bin/sh
+
+#
+# Build a root certificate
+#
+
+export EASY_RSA="${EASY_RSA:-.}"
+"$EASY_RSA/pkitool" --initca $*
+~~~
+
+Change permission 
+
+~~~bash
+chmod 700 /etc/openvpn/easy-rsa/build-ca
+~~~
+
+This final command builds the certificate authority (CA)
+
 ~~~bash
 cd /etc/openvpn/easy-rsa
 . ./vars
 ./clean-all
 ./build-ca
+~~~
+
+## Generate a Certificate and Key for the Server
+
+
+We will do without interactive
+
+edit /etc/openvpn/easy-rsa/build-key-server
+
+~~~text
+#!/bin/sh
+
+# Make a certificate/private key pair using a locally generated
+# root certificate.
+#
+# Explicitly set nsCertType to server using the "server"
+# extension in the openssl.cnf file.
+
+export EASY_RSA="${EASY_RSA:-.}"
+"$EASY_RSA/pkitool" --server $*
+~~~
+
+Change permission 
+
+~~~bash
+chmod 700 /etc/openvpn/easy-rsa/build-key-server
+~~~
+
+Create key
+
+~~~bash
+cd /etc/openvpn/easy-rsa
+. ./vars
+./build-key-server server
+~~~
+
+## Move the Server Cerficates and Keys
+
+OpenVPN expects to see the server's CA, certificate and key in /etc/openvpn. Let's copy them into the proper location.
+
+~~~bash
+cp /etc/openvpn/easy-rsa/keys/{server.crt,server.key,ca.crt} /etc/openvpn
+~~~
+
+# Restart Server
+
+~~~bash
+service openvpn restart
+service openvpn status
 ~~~
