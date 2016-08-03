@@ -13,6 +13,8 @@ PROJECT | myproject | Project name
 Pyengine is based on apache and python django framework
 
 ~~~bash
+apt-get update
+export DEBIAN_FRONTEND=noninteractive
 apt-get install -y git python-dev python-pip mariadb-server apache2 libapache2-mod-wsgi python-mysqldb libyaml-cpp-dev libyaml-dev
 ~~~
 
@@ -27,6 +29,7 @@ pip install routes
 pip install rsa
 pip install pytz
 pip install pyyaml
+pip install django-cors-headers
 ~~~
 
 ## Download source
@@ -50,7 +53,7 @@ edit /usr/local/lib/python2.7/site-packages/pyengine.pth
 
 ## Update Apache configuration
 
-edit /etc/apache2/conf-available/pyengine.conf
+edit /etc/apache2/sites-available/pyengine.conf
 
 ~~~text
 <VirtualHost *:80>
@@ -75,15 +78,18 @@ edit /etc/apache2/conf-available/pyengine.conf
 Enable the pyengine
 
 ~~~bash
-a2enconf pyengine
+a2ensite pyengine
 ~~~
 
 # Create Database
 
 Create pyengine database
 
-~~~bash
-mysql -u root -e "create database pyengine character set utf8 collate utf8_general_ci"
+~~~expect
+spawn mysql -u root -e "create database pyengine character set utf8 collate utf8_general_ci"
+expect "Enter password: "
+send "\n";
+interact
 ~~~
 
 ## Update django DB
