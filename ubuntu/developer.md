@@ -29,6 +29,14 @@ cs add cscope.out
 endif
 ~~~
 
+# Stop bell sound
+
+edit .inputrc
+
+~~~text
+set bell-style visible
+~~~
+
 # Update mkcs
 
 This is cscope environment
