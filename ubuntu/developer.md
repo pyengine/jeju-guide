@@ -9,6 +9,7 @@ apt-get -y install vim
 apt-get -y install cscope
 apt-get -y install ctags
 apt-get -y install git
+apt-get -y install screen
 ~~~
 
 # Update .vimrc
