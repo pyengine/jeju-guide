@@ -10,6 +10,7 @@ apt-get -y install cscope
 apt-get -y install ctags
 apt-get -y install git
 apt-get -y install screen
+apt-get -y install tmux
 ~~~
 
 # Update .vimrc
