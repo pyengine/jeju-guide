@@ -5,6 +5,7 @@
 Keyword | Value     | Description
 ----    | ----      | ----
 NET1 | route 10.1.0.0 255.255.255.0 | Expose network to client
+SERVER | 10.9.0.0 255.255.255.0 | OpenVPN Server Network
 COUNTRY | KR        | Key Country
 PROVINCE | Seoul        | Key Province
 CITY | Seoul        | Key City
@@ -46,7 +47,7 @@ key server.key
 
 dh dh2048.pem
 
-server 10.8.0.0 255.255.255.0
+server ${SERVER}
 
 ###########################################
 # If you want to expose network to client #
