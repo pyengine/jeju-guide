@@ -5,6 +5,9 @@
 Keyword     | Value                 | Description
 ----        | ----                  | ----
 REPO        | https://repos.influxdata.com  | Ubuntu Repository for Influx DB
+DB_NAME     | test                  | DATABASE name
+DB_USER     | root                  | user name
+DB_PASSWORD | root                  | password for user
 
 # Installation
 
@@ -21,6 +24,12 @@ And then to install and start the InfluxDB service
 ~~~bash
 apt-get update
 apt-get install -y --force-yes influxdb
+~~~
+
+# Create Database
+
+~~~bash
+influx -execute 'create database ${DB_NAME}'
 ~~~
 
 * Reference
