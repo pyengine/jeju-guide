@@ -8,6 +8,7 @@ yum -y install vim
 yum -y install cscope
 yum -y install ctags
 yum -y install git
+yum -y install tmux
 ~~~
 
 # Update .vimrc
