@@ -76,3 +76,9 @@ git config --global user.name "Choonho Son"
 git config --global user.email choonho.son@gmail.com
 git config --global core.editor vim
 ~~~
+
+# Change LANG
+
+~~~bash
+echo "export LANG=C" >> ~/.profile
+~~~
