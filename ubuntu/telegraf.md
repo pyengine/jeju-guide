@@ -4,6 +4,7 @@
 
 Keyword     | Value                 | Description
 ----        | ----                  | ----
+REPO        | https://dl.influxdata.com/telegraf/releases     | Telegraf Repository
 VER         | 1.1.1     | Telegraf Version
 
 # Installation
@@ -11,7 +12,7 @@ VER         | 1.1.1     | Telegraf Version
 Download package
 
 ~~~bash
-wget https://dl.influxdata.com/telegraf/releases/telegraf_${VER}_amd64.deb
+wget ${REPO}/telegraf_${VER}_amd64.deb
 dpkg -i telegraf_${VER}_amd64.deb
 ~~~
 
