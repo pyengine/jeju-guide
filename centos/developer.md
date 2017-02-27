@@ -29,6 +29,14 @@ cs add cscope.out
 endif
 ~~~
 
+# Stop bell sound
+
+edit .inputrc
+
+~~~text
+set bell-style visible
+~~~
+
 # Update mkcs
 
 This is cscope environment
@@ -65,4 +73,18 @@ chmod 755 mkcs
 git config --global user.name "Choonho Son"
 git config --global user.email choonho.son@gmail.com
 git config --global core.editor vim
+~~~
+
+# Change LANG
+
+~~~bash
+echo "export LANG=C" >> ~/.profile
+~~~
+
+# tmux config
+
+edit .tmux.conf
+
+~~~text
+bind a set-window-option synchronize-panes
 ~~~

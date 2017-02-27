@@ -82,3 +82,11 @@ git config --global core.editor vim
 ~~~bash
 echo "export LANG=C" >> ~/.profile
 ~~~
+
+# tmux config
+
+edit .tmux.conf
+
+~~~text
+bind a set-window-option synchronize-panes
+~~~
